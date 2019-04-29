@@ -1,0 +1,42 @@
+{
+  "consumer": {
+    "name": "Consumer"
+  },
+  "provider": {
+    "name": "Provider"
+  },
+  "interactions": [
+    {
+      "description": "a request for UserA",
+      "providerState": "UserA exists and is not an administrator",
+      "request": {
+        "method": "get",
+        "path": "/users/UserA"
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "username": "UserA",
+          "id": 123,
+          "groups": [
+            "Editors"
+          ],
+          "last_modified": "2016-12-15T20:16:01"
+        },
+        "matchingRules": {
+          "$.body.last_modified": {
+            "match": "regex",
+            "regex": "\\d+-\\d+-\\d+T\\d+:\\d+:\\d+"
+          }
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "pactSpecification": {
+      "version": "2.0.0"
+    }
+  }
+}
