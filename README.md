@@ -9,4 +9,5 @@ In one terminal window:
     FLASK_APP=provider/provider.py flask run
 
 In another window:
+
     pact-verifier --pact-url consumer-provider.json --provider-base-url http://localhost:5000
