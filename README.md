@@ -1,3 +1,7 @@
+Install dependencies:
+
+    pip install -r requirements.txt
+
 To run the consumer tests and create a Pact file:
 
     pytest -v consumer
